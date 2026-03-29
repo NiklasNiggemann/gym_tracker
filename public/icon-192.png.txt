@@ -1,0 +1,5 @@
+This is a placeholder for the 192x192 PWA icon.
+To add real icons:
+1. Create a 512x512 PNG image with your gym tracker logo
+2. Use an online tool to resize it to 192x192 and 512x512
+3. Replace icon-192.png and icon-512.png in the public/ folder

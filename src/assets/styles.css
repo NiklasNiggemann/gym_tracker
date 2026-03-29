@@ -1,0 +1,609 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #4a90e2;
+  --primary-dark: #357abd;
+  --danger-color: #e74c3c;
+  --success-color: #27ae60;
+  --bg-dark: #1a202c;
+  --bg-medium: #2d3748;
+  --bg-light: #4a5568;
+  --text-light: #e2e8f0;
+  --text-muted: #a0aec0;
+  --border-color: #4a5568;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+#app {
+  max-width: 800px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+header {
+  background-color: var(--bg-medium);
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  font-size: 1.5rem;
+  color: var(--text-light);
+}
+
+/* Navigation Tabs */
+.tab-nav {
+  display: flex;
+  background-color: var(--bg-medium);
+  border-bottom: 2px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 1rem;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-bottom: 3px solid transparent;
+}
+
+.tab-button:hover {
+  color: var(--text-light);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.tab-button.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+  background-color: rgba(74, 144, 226, 0.1);
+}
+
+/* Main Content */
+main {
+  flex: 1;
+  padding: 1.5rem;
+}
+
+/* Footer */
+footer {
+  background-color: var(--bg-medium);
+  padding: 1rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: 500;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn-primary:disabled {
+  background-color: var(--bg-light);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.btn-primary.visited {
+  background-color: var(--success-color);
+}
+
+.btn-secondary {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-medium);
+}
+
+.btn-danger {
+  background-color: var(--danger-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.btn-danger-small {
+  background-color: var(--danger-color);
+  color: white;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-small {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+.btn-export {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.btn-nav {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s;
+  border-radius: 0.375rem;
+}
+
+.btn-nav:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn-expand {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.btn-expand:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Input Fields */
+.input {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--bg-medium);
+  border: 1px solid var(--border-color);
+  border-radius: 0.375rem;
+  color: var(--text-light);
+  font-size: 1rem;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+.input-small {
+  width: auto;
+  padding: 0.5rem;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+/* Headings */
+h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
+}
+
+h3 {
+  font-size: 1.25rem;
+  color: var(--text-light);
+}
+
+h4 {
+  font-size: 1rem;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+}
+
+/* Visit Tracker Styles */
+.visit-tracker {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.streak-display {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.streak-number {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+}
+
+.streak-label {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 0.5rem;
+}
+
+.quick-actions {
+  margin-bottom: 1.5rem;
+}
+
+.calendar {
+  background-color: var(--bg-medium);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+}
+
+.day-header {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  padding: 0.5rem;
+  font-weight: 600;
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background-color: var(--bg-light);
+  transition: all 0.3s;
+  font-weight: 500;
+}
+
+.calendar-day:hover {
+  background-color: rgba(74, 144, 226, 0.2);
+}
+
+.calendar-day.empty {
+  background-color: transparent;
+  cursor: default;
+}
+
+.calendar-day.visited {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.calendar-day.today {
+  border: 2px solid var(--primary-color);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.stat-card {
+  background-color: var(--bg-medium);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+/* Workout Logger Styles */
+.workout-logger {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.workout-form {
+  background-color: var(--bg-medium);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+}
+
+.exercises-list {
+  margin-top: 1.5rem;
+}
+
+.exercises-list h3 {
+  margin-bottom: 1rem;
+}
+
+.form-actions {
+  margin-top: 1.5rem;
+}
+
+.success-message {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: rgba(39, 174, 96, 0.2);
+  border: 1px solid var(--success-color);
+  border-radius: 0.5rem;
+  color: var(--success-color);
+  text-align: center;
+}
+
+/* Exercise Entry Styles */
+.exercise-entry {
+  background-color: var(--bg-dark);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
+}
+
+.exercise-header {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.exercise-header select {
+  flex: 1;
+}
+
+.exercise-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sets-container {
+  margin-top: 1rem;
+}
+
+.sets-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.set-row {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr auto;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.set-number {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  min-width: 3rem;
+}
+
+.cardio-fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+/* Workout History Styles */
+.workout-history {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.history-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-section {
+  margin-bottom: 1.5rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-muted);
+}
+
+.workouts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.workout-card {
+  background-color: var(--bg-medium);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.workout-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.workout-header:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.workout-date {
+  display: flex;
+  flex-direction: column;
+}
+
+.exercise-count {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.workout-details {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.exercise-detail {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.exercise-detail:last-of-type {
+  border-bottom: none;
+}
+
+.sets-detail {
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+}
+
+.set-detail {
+  padding: 0.25rem 0;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.cardio-detail {
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+}
+
+.cardio-detail div {
+  padding: 0.25rem 0;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 640px) {
+  header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 1.25rem;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .stats,
+  .history-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .calendar-grid {
+    gap: 0.25rem;
+  }
+
+  .day-header,
+  .calendar-day {
+    font-size: 0.75rem;
+  }
+
+  .set-row {
+    grid-template-columns: auto 1fr 1fr auto;
+    gap: 0.25rem;
+  }
+
+  .cardio-fields {
+    grid-template-columns: 1fr;
+  }
+}
